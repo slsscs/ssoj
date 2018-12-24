@@ -47,12 +47,22 @@
     {% if not INLINE_FONTAWESOME %}
         <link rel="stylesheet" href="{{ FONTAWESOME_CSS }}">
     {% endif %}
+
+    {% if not INLINE_BOOTSTRAP_CSS %}
+        <link rel="stylesheet" href="{{ BOOTSTRAP_CSS }}">
+    {% endif %}
+
     {% compress css %}
         <link rel="stylesheet" href="{{ static('style.css') }}">
         {% if PYGMENT_THEME %}
             <link rel="stylesheet" href="{{ static(PYGMENT_THEME) }}">
         {% endif %}{% if INLINE_FONTAWESOME %}
         <link rel="stylesheet" href="{{ static('libs/fontawesome/font-awesome.css') }}">{% endif %}
+
+        {% if INLINE_BOOTSTRAP_CSS %}
+            <link rel="stylesheet" href="{{ static('libs/bootstrap/bootstrap.css') }}">
+        {% endif %}
+
         <link rel="stylesheet" type="text/css" href="{{ static('libs/featherlight/featherlight.min.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ static('libs/clipboard/tooltip.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ static('libs/select2/select2.css') }}">
@@ -71,11 +81,28 @@
         <script src="{{ JQUERY_JS }}"></script>
     {% endif %}
 
+    {% if not INLINE_POPPER %}
+        <script src="{{ POPPER_JS }}"></script>
+    {% endif %}
+
+    {% if not INLINE_BOOTSTRAP_JS %}
+        <script src="{{ BOOTSTRAP_JS }}"></script>
+    {% endif %}
+
     {% compress js %}
         <script>{{ inlinei18n(LANGUAGE_CODE)|safe }}</script>
         {% if INLINE_JQUERY %}
             <script src="{{ static('libs/jquery-1.11.2.min.js') }}"></script>
         {% endif %}
+
+        {% if INLINE_POPPER %}
+            <script src="{{ static('libs/popper.min.js') }}"></script>
+        {% endif %}
+
+        {% if INLINE_BOOTSTRAP_JS %}
+            <script src="{{ static('libs/bootstrap.min.js') }}"></script>
+        {% endif %}
+
         <script src="{{ static('libs/jquery-cookie.js') }}"></script>
         <script src="{{ static('libs/jquery-taphold.js') }}"></script>
         <script src="{{ static('libs/jquery.unveil.js') }}"></script>

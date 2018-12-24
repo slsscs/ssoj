@@ -26,10 +26,15 @@ def get_resource(request):
     return {
         'PYGMENT_THEME': getattr(settings, 'PYGMENT_THEME', None),
         'INLINE_JQUERY': getattr(settings, 'INLINE_JQUERY', True),
+        'INLINE_POPPER': getattr(settings, 'INLINE_POPPER', False),
+        'INLINE_BOOTSTRAP_JS': getattr(settings, 'INLINE_BOOTSTRAP_JS', False),
+        'INLINE_BOOTSTRAP_CSS': getattr(settings, 'INLINE_BOOTSTRAP_CSS', False),
         'INLINE_FONTAWESOME': getattr(settings, 'INLINE_FONTAWESOME', True),
         'JQUERY_JS': getattr(settings, 'JQUERY_JS', '//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'),
-        'FONTAWESOME_CSS': getattr(settings, 'FONTAWESOME_CSS',
-                                   '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'),
+        'POPPER_JS': getattr(settings, 'POPPER_JS', '//cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js'),
+        'BOOTSTRAP_JS': getattr(settings, 'BOOTSTRAP_JS', '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js'),
+        'FONTAWESOME_CSS': getattr(settings, 'FONTAWESOME_CSS', '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'),
+        'BOOTSTRAP_CSS': getattr(settings, 'BOOTSTRAP_CSS', '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'),
         'DMOJ_SCHEME': scheme,
         'DMOJ_CANONICAL': getattr(settings, 'DMOJ_CANONICAL', ''),
     }
