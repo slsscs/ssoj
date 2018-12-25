@@ -242,12 +242,14 @@ def edit_profile(request):
                 form.fields['newsletter'].initial = subscription.subscribed
         form.fields['test_site'].initial = request.user.has_perm('judge.test_site')
 
+    has_organization = len(form.fields['organizations']._get_queryset()) > 0
     tzmap = getattr(settings, 'TIMEZONE_MAP', None)
     return render(request, 'user/edit-profile.html', {
         'form': form, 'title': _('Edit profile'), 'profile': profile,
         'has_math_config': bool(getattr(settings, 'MATHOID_URL', False)),
         'TIMEZONE_MAP': tzmap or 'http://momentjs.com/static/img/world.png',
         'TIMEZONE_BG': getattr(settings, 'TIMEZONE_BG', None if tzmap else '#4E7CAD'),
+        'has_organization': has_organization
     })
 
 

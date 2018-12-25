@@ -1,0 +1,6 @@
+{% extends "tabs-base.html" %}
+
+{% block tabs %}
+    {{ make_tab('code_editor', 'fa-code', code_editor_link, _('Code Editor')) }}
+    {{ make_tab('test_code_link', 'fa-file-text-o', test_code_link, _('Test Code')) }}
+{% endblock %}
