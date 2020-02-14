@@ -30,8 +30,8 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 SITE_ID = 1
-SITE_NAME = 'DMOJ'
-SITE_LONG_NAME = 'DMOJ: Modern Online Judge'
+SITE_NAME = 'SSOJ'
+SITE_LONG_NAME = 'Stephen Lewis S.S. Online Judge'
 SITE_ADMIN_EMAIL = False
 
 
@@ -135,7 +135,7 @@ else:
 
     WPADMIN = {
         'admin': {
-            'title': 'DMOJ Admin',
+            'title': 'SSOJ Admin',
             'menu': {
                 'top': 'wpadmin.menu.menus.BasicTopMenu',
                 'left': 'wpadmin.menu.custom.CustomModelLeftMenuWithDashboard',
